@@ -1,1 +1,1 @@
-This is my reflection on dragon clicker
+This is my reflection on dragon clicker.
