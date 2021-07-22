@@ -6,3 +6,4 @@
 This was my Experience:
 1. Dragon's Emojis are Unicode!!
 2. Digital, not analog
+3. Dragons are dangerous
