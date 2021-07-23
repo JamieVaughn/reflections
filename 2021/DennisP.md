@@ -6,7 +6,7 @@
 This was my Experience:
 1. Dragon's Emojis are Unicode!!
 2. Digital, not analog
-3. Dragons are dangerous
+3. Dragons are not dangerous
 
 #### Are you happy with your method of duplication?
 Yes. My method of duplication used the factory method. I passed three arguments as parameters to the dragonFactory function.
