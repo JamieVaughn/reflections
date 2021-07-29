@@ -20,3 +20,12 @@ I moved the `addClick()` function into a `dragonFactory()` function that returns
 What's completely new is the `showDragon()` function, which is called on the `nav` buttons and displays each elemental dragon card. I went back and forth on the best way to structure this function (manipulate `innerHTML`? use `createElement()` and `appendChild()`?) before settling on manipulating the `innerHTML` of the `.arena`. From my research, it's faster than creating multiple elements and appending them, so I just set the innerHTML to the HTML necessary to show each dragon. (I also added in little emojis next to the dragons on each card, because I don't like the visual effect of `hue-rotate` on the colors of the dragon emoji. I plan to create an SVG of the dragon, and then I can change the colors with CSS that way.)
 
 I still anticipate the client wanting to see multiple dragons onscreen at once! In which case, I think I will create a Boolean `onScreen` value on the dragon object, to keep track of whether or not each dragon card is onscreen, and then I can add and delete dragon cards based on that. I'll also have to create a `hideDragon()` function on the dragon object, and chance the `onclick` function attached to the nav button, but that should be simple.
+
+### July 28, 2021
+In order to organize the dragons and elements better, I created an `elements` array and a `stable` array. The `elements` array contains a list of elements used to create the dragons (right now: fire water, earth, air, heart - but which could be modified easily, and upon user engagement). The `stable` array is an array of dragon objects, created by iterating over the `elements` array with the `dragonFactory()` function. In this way, the data is more organized.
+
+I also decided to spawn the navigation buttons on the page in the same way that I spawned the dragon objects, so I made an `addButton()` function to add buttons to the UI for however many elements/dragons exist.
+
+I simplified the CSS so that the classes take the element names (instead of colors), just so I have to pss fewer arguments. I also replaced the dragon emoji with an SVG whose `fill` I can customize with CSS :)
+
+I envision that the `elements` array could be added to via a form on the page, if the client wants the user to spawn their own dragons. If that's the case (and a user might want to create multiple fire dragons, for example), then I'll probably add a name for each dragon, so each can still b euniuely identified via CSS IDs.
