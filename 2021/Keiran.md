@@ -31,6 +31,8 @@ I simplified the CSS so that the classes take the element names (instead of colo
 I envision that the `elements` array could be added to via a form on the page, if the client wants the user to spawn their own dragons. If that's the case (and a user might want to create multiple fire dragons, for example), then I'll probably add a name for each dragon, so each can still b euniuely identified via CSS IDs.
 
 ### August 2, 2021
-Making the app fit the MVC model was definitely the hardest part of this project so far. It felt like a lot of moving pieces.
+Making the app fit the MVC model was definitely the hardest part of this project so far. It felt like a lot of moving pieces. But in the end, I think the most difficult part was remembering to call `render()` when it needed to be called!
 
-Since I was already generating my list of dragons, it was easy to move that part into the model. The hardest part was figuring out the rendering rnctions on the two views, and getting those called into being.
+Since I was already generating my list of dragons, it was easy to move that part into the model. My `stable` of dragons was already being generated through the `dragonFactory`, and my nav buttons were already being generated from an array of `elements`, so I created `get` functions on the controller for the views to access them.
+
+At first, I generated my `stable` in the `model.init()` function, but after I decided to let the user summon dragons via buttons I made an `addDragonToStable()` function that pushes a dragon of a certain element into the `stable`.
