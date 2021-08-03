@@ -36,3 +36,9 @@ Making the app fit the MVC model was definitely the hardest part of this project
 Since I was already generating my list of dragons, it was easy to move that part into the model. My `stable` of dragons was already being generated through the `dragonFactory`, and my nav buttons were already being generated from an array of `elements`, so I created `get` functions on the controller for the views to access them.
 
 At first, I generated my `stable` in the `model.init()` function, but after I decided to let the user summon dragons via the nav buttons I made an `addDragonToStable()` function that pushes a dragon of a certain element into the `stable`. (And honestly, I had to make sme function names a little more specific, once I realised that I had `viewCards.addDragon()` and a `model.addDragon()`!)
+
+In my views: my model is called 0 times, and my controller is called twice.
+
+In my model: my views are called 0 times, and my controller is called 0 times.
+
+In my controller: my views are called four times, and my model is called four times.
