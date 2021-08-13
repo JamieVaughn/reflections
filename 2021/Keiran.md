@@ -51,3 +51,14 @@ A funny thing is that, for the `closeModal()` function, I ended up just removing
 The thing I had the most fun with was realizing that I was passing a reference to the dragon object that was clicked into my `controller.dispatch()` function, so if I passed that dragon object on to my `viewAdmin.viewDragonEditor()` function, then I didn't even have to worry about trying to find the ID of the HTML element that was clicked. Such a good reason to use that `dispatch()` function for both adding clicks and opening the modal!
 
 Once I created the modals, it was surprisingly easy to get the values from the inputs/selects and then route those through the controller to have the model edit itself, and then just re-render the view.
+
+### August 13, 2021
+Decided to use color inputs to style the dragons, because I didn't want to write out CSS styles for a bunch of different possible color combinations. It required rewriting and modifying my functions in order to take an array of HEX codes instead of a string for the dragon color(s), but that only required rewriting on the front and back end of my routes.
+
+What was the most frustrating was realizing that I needed to generate unique class names for my SVG paths, or else the new colors and styles would override the older colors. I figured out that I could just append the dragon ID to the end of the path class names, which would make each SVG unique just like the dragon card.
+
+And adding the color inputs onto the editing modals was possibly the easiest part of it all. I needed to remember to gather the color values into an array before I could pass it through the controller to be pushed onto my `model.elements` array, but once I did that it was easy. I was also able to delete one of my string literal template creator functions from the `viewAdmin`, since I was selecting colors with the pickers instead.
+
+I also decided to change the `model.addDragonToStable()` function so that the "newest" dragon renders first, instead of the "oldest". This was literally so that the newest dragon wouldn't get lost at the bottom of a list on small screens.
+
+I still want to try to implement a sort and filtering function, just to see what it will take.
