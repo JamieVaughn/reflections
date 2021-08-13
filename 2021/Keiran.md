@@ -42,3 +42,10 @@ In my views: my model is called 0 times, and my controller is called twice.
 In my model: my views are called 0 times, and my controller is called 0 times.
 
 In my controller: my views are called four times, and my model is called four times.
+
+### August 12, 2021
+Now that I'm working in implementing the Admin views, I really appreciate the MVC model more. It's nice to keep (almost) all of the new code and functions in my `view.js` document, separate from the model and the controller. I ended up adding a function to view the Dragon Editor, a function to view the Add Dragon Type modal, functions for submitting both modals, and a function just to close the modal. I also ended up building two template creation functions, in order to generate `select` options in the modals (since I want the starting dragon type and color to be the default value).
+
+A funny thing is that, for the `closeModal()` function, I ended up just removing the `#modal` element completely, instead of playing with opacity and display like in the modal example we went over in class. Since I'm generating the modals with JS, it doesn't make sense to just hide and show them if I can just remove it. And if I get the values from the inputs before deleting the modal, then there's no harm.
+
+The thing I had the most fun with was realizing that I was passing a reference to the dragon object that was clicked into my `controller.dispatch()` function, so if I passed that dragon object on to my `viewAdmin.viewDragonEditor()` function, then I didn't even have to worry about trying to find the ID of the HTML element that was clicked. Such a good reason to use that `dispatch()` function for both adding clicks and opening the modal!
