@@ -49,3 +49,5 @@ Now that I'm working in implementing the Admin views, I really appreciate the MV
 A funny thing is that, for the `closeModal()` function, I ended up just removing the `#modal` element completely, instead of playing with opacity and display like in the modal example we went over in class. Since I'm generating the modals with JS, it doesn't make sense to just hide and show them if I can just remove it. And if I get the values from the inputs before deleting the modal, then there's no harm.
 
 The thing I had the most fun with was realizing that I was passing a reference to the dragon object that was clicked into my `controller.dispatch()` function, so if I passed that dragon object on to my `viewAdmin.viewDragonEditor()` function, then I didn't even have to worry about trying to find the ID of the HTML element that was clicked. Such a good reason to use that `dispatch()` function for both adding clicks and opening the modal!
+
+Once I created the modals, it was surprisingly easy to get the values from the inputs/selects and then route those through the controller to have the model edit itself, and then just re-render the view.
