@@ -62,3 +62,6 @@ And adding the color inputs onto the editing modals was possibly the easiest par
 I also decided to change the `model.addDragonToStable()` function so that the "newest" dragon renders first, instead of the "oldest". This was literally so that the newest dragon wouldn't get lost at the bottom of a list on small screens.
 
 I still want to try to implement a sort and filtering function, just to see what it will take.
+
+### August 16, 2021
+Added the filtering functionality. Jamie showed that he built the filtering into his `getDragons()` function, with the base levels of `clicks` and `level` as the default, and so I did the same. I would have to think a little harder to filter the dragons by elemental type (what would the default value be? what's the logic there?) but that would also be doable.
