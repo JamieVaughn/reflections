@@ -42,3 +42,28 @@ In my views: my model is called 0 times, and my controller is called twice.
 In my model: my views are called 0 times, and my controller is called 0 times.
 
 In my controller: my views are called four times, and my model is called four times.
+
+### August 12, 2021
+Now that I'm working in implementing the Admin views, I really appreciate the MVC model more. It's nice to keep (almost) all of the new code and functions in my `view.js` document, separate from the model and the controller. I ended up adding a function to view the Dragon Editor, a function to view the Add Dragon Type modal, functions for submitting both modals, and a function just to close the modal. I also ended up building two template creation functions, in order to generate `select` options in the modals (since I want the starting dragon type and color to be the default value).
+
+A funny thing is that, for the `closeModal()` function, I ended up just removing the `#modal` element completely, instead of playing with opacity and display like in the modal example we went over in class. Since I'm generating the modals with JS, it doesn't make sense to just hide and show them if I can just remove it. And if I get the values from the inputs before deleting the modal, then there's no harm.
+
+The thing I had the most fun with was realizing that I was passing a reference to the dragon object that was clicked into my `controller.dispatch()` function, so if I passed that dragon object on to my `viewAdmin.viewDragonEditor()` function, then I didn't even have to worry about trying to find the ID of the HTML element that was clicked. Such a good reason to use that `dispatch()` function for both adding clicks and opening the modal!
+
+Once I created the modals, it was surprisingly easy to get the values from the inputs/selects and then route those through the controller to have the model edit itself, and then just re-render the view.
+
+### August 13, 2021
+Decided to use color inputs to style the dragons, because I didn't want to write out CSS styles for a bunch of different possible color combinations. It required rewriting and modifying my functions in order to take an array of HEX codes instead of a string for the dragon color(s), but that only required rewriting on the front and back end of my routes.
+
+What was the most frustrating was realizing that I needed to generate unique class names for my SVG paths, or else the new colors and styles would override the older colors. I figured out that I could just append the dragon ID to the end of the path class names, which would make each SVG unique just like the dragon card.
+
+And adding the color inputs onto the editing modals was possibly the easiest part of it all. I needed to remember to gather the color values into an array before I could pass it through the controller to be pushed onto my `model.elements` array, but once I did that it was easy. I was also able to delete one of my string literal template creator functions from the `viewAdmin`, since I was selecting colors with the pickers instead.
+
+I also decided to change the `model.addDragonToStable()` function so that the "newest" dragon renders first, instead of the "oldest". This was literally so that the newest dragon wouldn't get lost at the bottom of a list on small screens.
+
+I still want to try to implement a sort and filtering function, just to see what it will take.
+
+### August 16, 2021
+Added the filtering functionality. Jamie showed that he built the filtering into his `getDragons()` function, with the base levels of `clicks` and `level` as the default, and so I did the same. I would have to think a little harder to filter the dragons by elemental type (what would the default value be? what's the logic there?) but that would also be doable.
+
+JUST KIDDING. I took out those arguments from the `getDragons()` function, and instead made values on the model to keep track of what filtering options should be shown. That way, even when I add clicks to dragons, the filtering will remain the same.
