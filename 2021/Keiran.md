@@ -66,4 +66,6 @@ I still want to try to implement a sort and filtering function, just to see what
 ### August 16, 2021
 Added the filtering functionality. Jamie showed that he built the filtering into his `getDragons()` function, with the base levels of `clicks` and `level` as the default, and so I did the same. I would have to think a little harder to filter the dragons by elemental type (what would the default value be? what's the logic there?) but that would also be doable.
 
-JUST KIDDING. I took out those arguments from the `getDragons()` function, and instead made values on the model to keep track of what filtering options should be shown. That way, even when I add clicks to dragons, the filtering will remain the same.
+- JUST KIDDING. I took out those arguments from the `getDragons()` function, and instead made values on the model to keep track of what filtering options should be shown. That way, even when I add clicks to dragons, the filtering will remain the same.
+
+- Added type filtering! And made the filtering modal smarter by getting the filters values, so that the current filter values will show in the window.
