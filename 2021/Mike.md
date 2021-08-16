@@ -21,3 +21,15 @@ When the user clicks on a dragon in the icon row the total is updated and a copy
 
 ### Learning from Mistakes
 There's so much to javascript and HTML and there interdependency that making mistakes is easy.
+
+## Final Version: Dragon Dojo
+The final version contains the following changes:
+1. MVC changes
+2. an Add/Edit Dragon Modal
+3. dragon levels based on number of clicks
+4. image size change depending on level 
+5. Ctrl+Click on a dragaon in icon bar allows you to edit the image source
+6. Adding a new dragon type
+
+### Learning Points
+Learned alot changing the code to MVC modeling your MVC solution.  I choose to add the modal feature via a seperate javascript file instead of integrateing in the MVC code.  I thought this would be clearer to add and for the maintainer. I also spent time learning about clicks and timing as well as how to utilize the debugger better.  
