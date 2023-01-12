@@ -13,3 +13,8 @@ In the clicker.js document a function was created to start the variable score wi
 When the button is clicked i console log "clicked" so that we know that the function is working correctly. Added it for debugging purposes. 
 
 Over all for me it was a lot easier to break each down to three seperate folders and hoping it will allow for an easier transition to more cusomization or updated content request from our dragon clicker client.
+
+
+
+
+create 2 seperate functions for each button and added a few divs to wrap the image and the buttons so that they align a bit better. 
