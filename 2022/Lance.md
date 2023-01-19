@@ -1,2 +1,2 @@
-Dragon-clicker app notes
-Dragon-clicker will scale up
+Dragon- clicker: add a dragon icon or emoji, I would like to have added an image from my files. Dragon will increment when it is clicked on. this was achieved with addEvenlistener with a variable declaration.
+Dragon-duo:  add two dragon to the App, that will increment individually once click. My biggest issue with this was, debugging. I could not get my second dragon to increment. Going back and forth using the dev tools and VS code  really help with this problem. 
